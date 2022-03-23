@@ -86,10 +86,9 @@ class Ball extends Shape {
 				const distance = Math.sqrt(dx * dx + dy * dy)
 
 				if (distance < this.size + ball.size && ball.exists) {
-					ball.color = this.color = `rgb(${random(0, 255)},${random(
-						0,
-						255
-					)},${random(0, 255)})`
+					ball.color = this.color = `rgb(
+						${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)}
+						)`
 				}
 			}
 		})
