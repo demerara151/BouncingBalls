@@ -7,23 +7,16 @@ const ctx = canvas.getContext("2d")
 const width = (canvas.width = window.innerWidth)
 const height = (canvas.height = window.innerHeight)
 
-const random = (min: number, max: number) =>
-	Math.floor(Math.random() * (max - min)) + min
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
 
 class Shape {
-	x: number
-	y: number
-	velX: number
-	velY: number
-	exists: boolean
+	x
+	y
+	velX
+	velY
+	exists
 
-	constructor(
-		x: number,
-		y: number,
-		velX: number,
-		velY: number,
-		exists: boolean
-	) {
+	constructor(x, y, velX, velY, exists) {
 		this.x = x
 		this.y = y
 		this.velX = velX
@@ -33,18 +26,10 @@ class Shape {
 }
 
 class Ball extends Shape {
-	color: string
-	size: number
+	color
+	size
 
-	constructor(
-		x: number,
-		y: number,
-		velX: number,
-		velY: number,
-		exists: boolean,
-		color: string,
-		size: number
-	) {
+	constructor(x, y, velX, velY, exists, color, size) {
 		super(x, y, velX, velY, exists)
 		this.color = color
 		this.size = size
@@ -96,10 +81,10 @@ class Ball extends Shape {
 }
 
 class EvilCircle extends Shape {
-	color: string
-	size: number
+	color
+	size
 
-	constructor(x: number, y: number, exists: boolean) {
+	constructor(x, y, exists) {
 		super(x, y, 20, 20, exists)
 		this.color = "white"
 		this.size = 10
